@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = "real-time-api-api"
+        DOCKER_IMAGE = "real-time-api-api-1"
         DOCKER_REGISTRY = "ahrahr"
     }
     stages {
