@@ -5,6 +5,11 @@ pipeline {
         DOCKER_REGISTRY = "ahrahr"
     }
     stages {
+        stage('Clean Workspace') {
+            steps {
+                cleanWs() 
+            }
+        }
         stage('Clone Repository') {
             steps {
                 git branch: 'master', url: 'https://github.com/ahr-ahr/RealTime-API.git'
@@ -21,7 +26,8 @@ pipeline {
             steps {
                 script {
                     docker.image(DOCKER_IMAGE).inside {
-                        sh 'npm run test'
+                        // Using bat instead of sh if running on Windows
+                        bat 'npm run test'
                     }
                 }
             }
