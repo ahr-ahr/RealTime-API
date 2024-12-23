@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/ahr-ahr/RealTime-API.git'
+                git branch: 'master', url: 'https://github.com/ahr-ahr/RealTime-API.git'
             }
         }
         stage('Build Docker Image') {
